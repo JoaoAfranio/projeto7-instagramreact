@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Usuario(props) {
-  const [nome, setNome] = React.useState(props.usuario);
+  const [nome, setNome] = React.useState(props.nome);
   const [imagem, setImagem] = React.useState(props.img);
 
   return (
@@ -15,14 +15,14 @@ export default function Usuario(props) {
         alt=""
       />
       <div class="texto">
-        <strong>{nome}</strong>
+        <strong>{props.usuario}</strong>
         <span
           onClick={() => {
             const novoNome = prompt("Digite o novo nome de usuário");
             setNome(novoNome);
           }}
         >
-          {props.nome}
+          {nome}
           <ion-icon name="pencil"></ion-icon>
         </span>
       </div>
